@@ -50,8 +50,6 @@ for luz, dfs_luz in dfs_luces.items():
 
     promedio_acierto = dfs_luz.groupby('Time')['Resultado'].mean().reset_index()
 
-    
-
     # Clopper-Pearson
     for index, row in promedio_acierto.iterrows():
         p = row['Resultado']
