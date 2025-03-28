@@ -34,7 +34,6 @@ for i, archivo in enumerate(glob.glob(ruta), start=1):
 
 df_concatenado = pd.concat(dfs, ignore_index=True)
 
-# Guardar el DataFrame concatenado como un archivo Excel
 df_concatenado.to_excel('Datos_Concatenados.xlsx', index=False)
 
 
