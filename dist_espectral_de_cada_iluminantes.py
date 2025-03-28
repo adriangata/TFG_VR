@@ -4,19 +4,17 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-ruta = 'D:\\ADRIÁN\\Estudios\\Universidad UEX\\zzzTFG\\Iluminantes\\*.xlsx' #importante las \\ para para evitar errores de escape en la cadena de la ruta
+ruta = 'D:\\ADRIÁN\\Estudios\\Universidad UEX\\zzzTFG\\Iluminantes\\*.xlsx'
 
 dfs = []
 nombres_archivos = []
 
 for archivo in glob.glob(ruta):
     df = pd.read_excel(archivo, dtype=float, decimal=',', header=None)
-    dfs.append(df)  # Agrega el DataFrame a la lista
+    dfs.append(df)
 
     nombre_archivo_completo = os.path.basename(archivo).split('.')[0]
     nombres_archivos.append(nombre_archivo_completo)
-
-
 
 for i, df in enumerate(dfs):
 
