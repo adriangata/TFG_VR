@@ -3,19 +3,18 @@ import glob
 import os
 import matplotlib.pyplot as plt
 
-ruta = 'D:\\ADRIÁN\\Estudios\\Universidad UEX\\zzzTFG\\Datos\\*.xlsx' #importante las \\ para para evitar errores de escape en la cadena de la ruta
+ruta = 'D:\\ADRIÁN\\Estudios\\Universidad UEX\\zzzTFG\\Datos\\*.xlsx'
 
 dfs = []
 nombres_archivos = []
 
 for archivo in glob.glob(ruta):
     df = pd.read_excel(archivo)
-    dfs.append(df)  # Agrega el DataFrame a la lista
+    dfs.append(df)
 
     nombre_archivo_completo = os.path.basename(archivo)
-     # Eliminar la extensión del archivo y quitar el sufijo después del guion bajo
     nombre_archivo, _ = os.path.splitext(nombre_archivo_completo)
-    nombre_archivo = nombre_archivo.split('_')[0]  # Obtener solo la parte antes del guion bajo ()
+    nombre_archivo = nombre_archivo.split('_')[0]
     nombres_archivos.append(nombre_archivo)
 
 luces = ['Red', 'D65', 'Green', 'Blue']
@@ -64,4 +63,3 @@ plt.ylabel('Porcentaje de fallos (%)')
 plt.ylim(0, 100)
 plt.title('Personas sin ningún acierto para cada iluminante')
 plt.show()
-
