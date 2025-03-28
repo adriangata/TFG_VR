@@ -40,9 +40,6 @@ for i in range(len(dfs)):
     if ((df['Time'] == 100) & (df['Resultado'] == 0)).any() and ((df['Time'] == 120) & (df['Resultado'] == 0)).any():
         suma4+=1
         
-
-
-
 print (f'ACierta la penultima pero no la ultima:{suma1}')
 print (f'ACierta la penultima y la ultima:{suma2}')
 print (f'Falla la penultima y acierta la ultima:{suma3}')
